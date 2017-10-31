@@ -1,3 +1,28 @@
 # group_vars/all.yml
 # Variables visible to all nodes
 ---
+rhbase_repositories:
+  - epel-release
+rhbase_install_packages:
+  - bash-completion
+  - vim-enhanced
+  - bind-utils
+  - git
+  - nano
+  - tree
+  - wget
+rhbase_users:
+    - name: maarten
+      comment: 'Maarten De Smedt'
+      groups:
+         - wheel
+         - users
+      password: '$6$TL02RSYFDNZ.0Oy3$xnq84mvPkvYlFnc8O35UGV2O58ohiLcW.7WX8dHvqIHajYCsVD1tC7.HIUCUTiGCuf5zbRGG3VwnysLwFwwAo/'
+rhbase_motd: true
+mariadb_databases:
+  - name: appdb1
+mariadb_users:
+  - name: maarten
+    priv: '*.*:ALL,GRANT'
+  - name: vagrant
+    priv: '*.*:ALL,GRANT'
