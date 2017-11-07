@@ -1,3 +1,0 @@
-rhbase_firewall_allow_services:
-   - http
-   - https
