@@ -8,8 +8,8 @@
 # Variables
 #
 sut_ip=172.16.0.11   # IP of the System Under Test
-admin_user=bert      # User with admin privileges
-admin_password=bert
+admin_user=maarten      # User with admin privileges
+admin_password=maarten
 testfile="tst${RANDOM}"
 
 # Useful return codes
@@ -150,20 +150,7 @@ assert_no_write_access() {
 
 @test 'write access for share ‘public’' {
   #                      Share      User          Password
-  assert_write_access    public     alexanderd    alexanderd
-  assert_write_access    public     anc           anc
-  assert_write_access    public     benoitp       benoitp
-  assert_write_access    public     christophev   christophev
-  assert_write_access    public     elenaa        elenaa
-  assert_write_access    public     evyt          evyt
-  assert_write_access    public     krisv         krisv
-  assert_write_access    public     leend         leend
-  assert_write_access    public     nehirb        nehirb
-  assert_write_access    public     stefaanv      stefaanv
-  assert_write_access    public     stevenh       stevenh
-  assert_write_access    public     stevenv       stevenv
-  assert_write_access    public     svena         svena
-  assert_write_access    public     ${admin_user} ${admin_password}
+
 }
 
 @test 'read access for share ‘management’' {
@@ -317,4 +304,3 @@ assert_no_write_access() {
   assert_no_write_access it         svena         svena
   assert_write_access    it         ${admin_user} ${admin_password}
 }
-

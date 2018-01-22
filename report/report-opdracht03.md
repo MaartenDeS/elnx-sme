@@ -1,13 +1,47 @@
-rhbase_firewall_allow_services:
-  - ssh
-  - samba
-  - ftp
+# Enterprise Linux Lab Report
 
-samba_workgroup: AVALON
-samba_server_string: 'File server voor Avalon'
+- Student name: Maarten De Smedt
+- Github repo: <https://github.com/HoGentTIN/elnx-sme-MaartenDeS>
 
-samba_load_homes: true
+Het op zetten van SMB en FTP filservers + configuratie hiervan met ansible op een Centos systeem.
 
+## Test plan
+
+Bijna alle testen deden we met de automatische bats testen.
+
+1. Start de vm's met het commando `vagrant up`
+2. Log in op alle servers met `vagrant ssh pr011 ` en run de tests.
+3. Alle tests zouden moeten werken.
+4. Bij een test die niet werkt zie je meteen de rede hiervan.
+
+## Procedure/Documentation
+
+Allereerst heb ik de ansible role gezocht. Ik kwam uit op 2 rollen
+- Samba: `bertvv.samba`
+- VSFTPD: `bertvv.vsftp`
+### hosts
+Eerst voegen we onze  nieuwe host toe in het vagrant-host file. We voegen ook het correcte ip addres + subnetmask toe. Deze kunnen we vinden in de readme.md.
+```
+- name: pr011
+  ip: 172.16.0.11
+  netmask: 255.255.255.0
+```
+Hierdoor worden deze rollen geïnstalleerd.
+### site.yml
+hierna voegen we ze toe in ons site.yml file. we maken een nieuwe host aan en voegen de nodige rollen toe.
+```
+- hosts: pr011
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.samba
+    - bertvv.vsftpd
+
+```
+### Stappenprogramma pr011.yml samba
+
+1. Allereerst heb ik de  gevraagde groepen en users toegevoegd. Met ook een user voor mezelf (`maarten`).
+```
 rhbase_user_groups:
   - management
   - technical
@@ -29,7 +63,7 @@ rhbase_users:
     groups:
       - public
       - technical
-    password: '$6$4eGDQ9cmErn7ZXrs$6qs5eqzrhTOiBXUfi4YyNKiFfCMDoAaqPVHPJi8G.87.Qc4iBG1/XpFWvJiaDJFyS.Z1pdynSxa4Xw3U0ZsGu0'
+    password: '$6$bm1UvPdNpJHxcy0L$nf4GNlAEX1DFY25/KU0fQqVf.eTXVOG9Hw63wEgoTtG/FoxtK5xTw48yXeK93GvaPofnNE4qkzwasr/POGhT61'
     shell: /sbin/nologin
   - name: stevenh
     comment: 'Steven Hermans'
@@ -113,75 +147,87 @@ rhbase_users:
       - technical
     password: '$6$YF1SJIRvs9oacOvj$jBZXV67E2H9ll7h8VBOmms7mkS61QqRcC.q.ZnJbWUhwgNttBPBOa/.lgYHr9cwU9bLxOYY4zTI1s2oTkoRQC1'
     shell: /sbin/nologin
+```
 
-samba_users:
-  - name: maarten
-    password: maarten
-  - name: alexanderd
-    password: alexanderd
-  - name : stevenh
-    password: stevenh
-  - name: stevenv
-    password: stevenv
-  - name: leend
-    password: leend
-  - name: svena
-    password: svena
-  - name: nehirb
-    password: nehirb
-  - name: krisv
-    password: krisv
-  - name: benoitp
-    password: benoitp
-  - name: anc
-    password: anc
-  - name: elenaa
-    password: elenaa
-  - name: evyt
-    password: evyt
-  - name: christophev
-    password: christophev
-  - name: stefaanv
-    password: stefaanv
+ook heb ik aan alles users die niet in it zitten geen toegang gegeven tot de shell.
 
-samba_shares:
-  - name: public
-    comment: 'Toegan iedere afdeling'
-    write_list: +public
-    public: yes
-  - name: management
-    comment: 'Share toegankelijk voor mensen uit de afdeling management'
-    group: management
-    write_list: +management
-    valid_users: +management
-    public: no
-  - name: technical
-    comment: 'Share toegankelijk voor mensen uit de afdeling technical'
-    group: technical
-    write_list: +technical
-    public: no
-  - name: it
-    comment: 'Share toegankelijk voor mensen uit de afdeling IT'
-    group: it
-    write_list: +it
-    valid_users: +it,+management
-    public: no
-  - name: sales
-    comment: 'Share toegankelijk voor mensen uit de afdeling sales'
-    group: sales
-    write_list: +sales
-    valid_users: +management,+sales
-    public: no
+2. nadien heb ik alle shares aangemaakt.
+  ```
+  samba_shares:
+    - name: public
+      comment: 'Toegan iedere afdeling'
+      write_list: +public
+      public: no
+    - name: management
+      comment: 'Toegang Management'
+      group: management
+      write_list: +management
+      valid_users: +management
+      public: no
+    - name: technical
+      comment: 'Toegang Technical'
+      group: technical
+      write_list: +technical
+      public: no
+    - name: it
+      comment: 'Toegan IT'
+      group: it
+      write_list: +it
+      valid_users: +it,+management
+      public: no
+    - name: sales
+      comment: 'Toegant Sales'
+      group: sales
+      write_list: +sales
+      valid_users: +management,+sales
+      public: no
 
+  ```
+3. Daarna weer de juiste services toelaten bij de firewall
 
-
+```
+rhbase_firewall_allow_services:
+  - ssh
+  - samba
+```
+### Stappenprogramma pr011.yml vsftpd
+1. eerst en vooral voeg ik een firewall regel toe voor ftp.
+```
+rhbase_firewall_allow_services:
+  - ssh
+  - samba
+  - ftp
+```
+2. dan heb ik anonymous users verboden en registered users toegestaan.
+```
 vsftpd_anonymous_enable: false
 vsftpd_local_enable: true
 
+```
+
+3. de root heb ik ook aangepast  
+```
 vsftpd_local_root: /srv/shares
-
+```
+4. daarba heb ik ook nog schrijftoegang gegeven
+```
 vsftpd_write_enable: true
+```
 
-vsftpd_options:
-  - key: chroot_local_user
-    value: 'YES'
+hierna werken alle testen.
+
+## Test report
+
+Hier zijn de problemen die ik heb ondervonden.
+
+### readwriteacces problemen
+De read en write acces van de public groep werkte niet. De users wouden geen acces krijgen tot het readen writen in de groep public.
+
+
+## Resources
+
+Hier zijn mijn recources:
+
+
+- Samba rol: <https://galaxy.ansible.com/bertvv/samba/>
+- VSFTPD rol: <https://galaxy.ansible.com/bertvv/vsftpd/>

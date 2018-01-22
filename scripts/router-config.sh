@@ -14,7 +14,7 @@ set service ssh port '22'
 
 #
 # IP settings
-#
+#WAN
 set interfaces ethernet eth0 address dhcp
 set interfaces ethernet eth0 description 'WAN link'
 

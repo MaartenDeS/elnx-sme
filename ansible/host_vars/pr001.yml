@@ -34,7 +34,6 @@ dhcp_subnets:
       - 192.0.2.11
     default_lease_time: 14400
     max_lease_time: 28800
-    
   # Dynamic IP
   - ip: 172.16.0.0
     netmask: 255.255.0.0

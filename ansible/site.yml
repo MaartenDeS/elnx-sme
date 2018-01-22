@@ -33,7 +33,7 @@
 
 #DHCP
 - hosts: pr001
-  sudo: true
+  become: true
   roles:
     - bertvv.rh-base
     - bertvv.dhcp

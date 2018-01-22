@@ -20,3 +20,7 @@ rhbase_users:
       password: '$6$TL02RSYFDNZ.0Oy3$xnq84mvPkvYlFnc8O35UGV2O58ohiLcW.7WX8dHvqIHajYCsVD1tC7.HIUCUTiGCuf5zbRGG3VwnysLwFwwAo/'
 
 rhbase_motd: true
+
+rhbase_admin_user: maarten
+rhbase_admin_ssh_key: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDmaqbeev+B54vgppVTV5qBpp5nMz+V8Qh99KTIXWmfSDQmn1isysZFzdz6SkQLQ8O92KdLfHDhM6UydpuPAqukODPO4S5J2TvH+VTGM5Ewu2mhevjaNn11RI35uPtC7G97sqoBG8LaZi98/g0avi21CSp7JJ1r/fHePzbWVy7yQns5lgI33WgsXmHHwuPYwutTCLiJ96aAq0XiTXI/zvMhBri3tQ7ODjOzmex14PT4yngnk9UTLn+AjIn1jP0l0p4RzbDj5d25Rb3MR5TaOww0bPxVdqxb0go+iTvxWsohmwSKqkQzoz9pZOYrUymIUMbc6rSCnrD5vsV2hSGsHUOp Maarten@Maarten-PC'
+#Waarden van vaste pc veranderen bij laptop
