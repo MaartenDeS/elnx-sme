@@ -1,5 +1,6 @@
 # site.yml
 ---
+  ##lamp
 - hosts: pu004
   become: true
   roles:
@@ -7,3 +8,32 @@
     - bertvv.mariadb
     - bertvv.httpd
     - bertvv.wordpress
+  pre_tasks:
+    - name: Copy new key
+      copy:
+        src: keycert/newkey.key
+        dest: /etc/pki/tls/private/newkey.key
+    - name: Copy new cert
+      copy:
+        src: keycert/newcert.crt
+        dest: /etc/pki/tls/certs/newcert.crt
+#dns
+- hosts: pu001,pu002
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.bind
+#fileshare
+- hosts: pr011
+  become: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.samba
+    - bertvv.vsftpd
+
+#DHCP
+- hosts: pr001
+  sudo: true
+  roles:
+    - bertvv.rh-base
+    - bertvv.dhcp

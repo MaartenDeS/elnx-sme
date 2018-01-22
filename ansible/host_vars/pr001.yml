@@ -1,0 +1,48 @@
+rhbase_firewall_allow_services:
+  - ssh
+  - dhcp
+
+# DHCP
+dhcp_global_default_lease_time: 14400
+dhcp_global_max_lease_time: 28800
+dhcp_global_routers: 172.16.255.254
+dhcp_global_domain_name: 'avalon.lan'
+dhcp_global_domain_name_servers:
+  - 192.0.2.10
+  - 192.0.2.11
+
+dhcp_subnets:
+  # Servers
+  - ip: 172.16.0.0
+    netmask: 255.255.0.0
+    begin_range: 172.16.0.2
+    end_range: 172.16.127.254
+    routers: 172.16.255.254
+    domain_name_servers:
+      - 192.0.2.10
+      - 192.0.2.11
+    default_lease_time: 14400
+    max_lease_time: 28800
+  # mac
+  - ip: 172.16.0.0
+    netmask: 255.255.0.0
+    range_begin: 172.16.128.1
+    range_end: 172.16.191.254
+    routers: 172.16.255.254
+    domain_name_servers:
+      - 192.0.2.10
+      - 192.0.2.11
+    default_lease_time: 14400
+    max_lease_time: 28800
+    
+  # Dynamic IP
+  - ip: 172.16.0.0
+    netmask: 255.255.0.0
+    range_begin: 172.16.192.1
+    range_end: 172.16.255.253
+    routers: 172.16.255.254
+    domain_name_servers:
+      - 192.0.2.10
+      - 192.0.2.11
+    default_lease_time: 14400
+    max_lease_time: 28800

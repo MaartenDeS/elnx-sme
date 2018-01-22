@@ -18,4 +18,5 @@ rhbase_users:
          - wheel
          - users
       password: '$6$TL02RSYFDNZ.0Oy3$xnq84mvPkvYlFnc8O35UGV2O58ohiLcW.7WX8dHvqIHajYCsVD1tC7.HIUCUTiGCuf5zbRGG3VwnysLwFwwAo/'
+
 rhbase_motd: true

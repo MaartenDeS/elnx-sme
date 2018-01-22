@@ -1,23 +1,23 @@
 rhbase_firewall_allow_services:
   - http
   - https
-
-httpd_scripting: 'php'
+  - ssh
 
 mariadb_databases:
   - name: wordpress
-
 mariadb_users:
-  - name: Maarten
+  - name: maarten
     password: letmein
-    priv: wordpress.*:ALL,GRANT
+    priv: wordpress.*:ALL
     state: present
-
 mariadb_root_password: letmein
 
+#word
 wordpress_database: wordpress
-wordpress_user: Maarten
+wordpress_user: maarten
 wordpress_password: letmein
 
-#httpd_SSLCertificateFile:
-#httpd_SSLCertificateKeyFile:
+#cert
+httpd_SSLCertificateFile: '/etc/pki/tls/certs/newcert.crt'
+httpd_SSLCertificateKeyFile: '/etc/pki/tls/private/newkey.key'
+httpd_scripting: 'php'

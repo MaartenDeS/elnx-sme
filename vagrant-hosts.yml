@@ -27,4 +27,23 @@
 ---
 - name: pu004
   ip: 192.0.2.50
+  netmask: 255.255.255.0
 
+#dns
+- name: pu001
+  ip: 192.0.2.10
+  netmask: 255.255.255.0
+
+- name: pu002
+  ip: 192.0.2.11
+  netmask: 255.255.255.0
+
+#file
+- name: pr011
+  ip: 172.16.0.11
+  netmask: 255.255.255.0
+
+  #DHCP
+- name: pr001
+  ip: 172.16.0.2 
+  netmask: 255.255.0.0
