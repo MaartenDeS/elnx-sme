@@ -15,7 +15,7 @@ Eerst een vooral ga ik toelichten waarom dit is geïntoduceerd. Hierbij gaan we 
 **Virtuele machine** softwaren zoals Hyper-V zijn gebaseerd op het nabootsen van virtule hardware. Ze hebben dus een groot aantal systeemvereisten als je deze wilt opzetten. 
 Terwijl **containers** gedeelde besturingssystemen gebruiken. Ze zijn dus veel efficiënter dan virtuele machines. In plaats van al de hardware te virtualizeren, werkt een container op de top van een linux instance. Zodat je alleen de benodigde dingen hebt. 90 % heeft de container niet in vergelijking met een virtuele machine, maar dit zijn dingen die je niet nodig hebt en die ervoor zorgen dat de container veel performanter is.  Hierdoor kan je meer dan 4 of 5 keer meer containers hebben op een systeem dan VM's.
 
-![docker-vm-container.png](https://github.com/MaartenDeS/elnx-sme/tree/soluation/Actua/pictures/docker-vm-container.png)
+![docker-vm-container.png](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/pictures/docker-vm-container.png)
 
 ### Kubernetes
 **Kubernetes** is een open-sources systeem voor het het automatiseren, beheren en schalen van containers. Het draait simpel uitgelegd clusters van containers. Dit is de technologie die google al  jaren gebruikt. Terwijl het pas 2,5 jaar(beginnen vanaf 01/2018) geleden werd publiek gemaakt.
@@ -30,7 +30,7 @@ Het grootste probleem was de container runtime, door het gebruiken van CRI-O is 
 #### Werking
 Als Kubernetes een container wilt uitvoeren 'bespreekt' die dit met CRI en daarop bespreekt de CRI-O deamon dit met runc (soort van OCI-comppliant runtime). Als kubernetes de container wilt stoppen doet CRI-O dit. Het doet dit allemaal achter schermen zodat de gebruiker zich geen zorgen moet maken over dit cruciale stuk van de container orkestratie.
 
-![CRI-Ov1_Chart_1.png](https://github.com/MaartenDeS/elnx-sme/tree/soluation/Actua/pictures/CRI-Ov1_Chart_1.png)
+![CRI-Ov1_Chart_1.png](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/pictures/CRI-Ov1_Chart_1.png)
 
 ## Proof-of-Concept
 
