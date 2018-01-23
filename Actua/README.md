@@ -43,50 +43,50 @@ vagrant up
 ```
 2. Daarna doe ik een vagrant ssh in de box en verander naar de root met het wachtwoord: vagrant.
 
-	  ```
+```
 vagrant ssh
 [vagrant@localhost ~]$ su
 
-	```
+```
     
 3.  Eerst download ik runc
 
-	  ```
- wget https://github.com/opencontainers/runc/releases/download/v1.0.0-rc4/runc.amd64
+```
+wget https://github.com/opencontainers/runc/releases/download/v1.0.0-rc4/runc.amd6
 
-	```
+```
     
 4.  Dan verander ik het excetuble bit and kopieer the runc binary naar mijn pad
 
-	  ```
+```
 chmod +x runc-linux-amd64 
 sudo mv runc-linux-amd64 /usr/bin/runc
 
-	```
+```
 5.  Dan download ik de GO binary release
-	  ```
+```
 wget https://storage.googleapis.com/golang/go1.7.4.linux-amd64.tar.gz
 
-	```
+```
 6. Hierna installeer ik GO.
-  	```
+```
 sudo tar -xvf go1.7.4.linux-amd64.tar.gz -C /usr/local/
 mkdir -p $HOME/go/src
 export GOPATH=$HOME/go
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-	```
+```
 7. Nu bouw ik ocid van de bron
-	```
+```
 sudo apt-get install -y libglib2.0-dev libseccomp-dev libapparmor-dev
 go get -d github.com/kubernetes-incubator/cri-o/...
 cd $GOPATH/src/github.com/kubernetes-incubator/cri-o
 make install.tools
 make
 sudo make install
-	```
+```
 8. als we **sudo sh -c 'echo "[Unit]** doen moet het bestand er zo uitzien.
 
-	```
+```
     Description=OCI-based implementation of Kubernetes Container Runtime Interface
     Documentation=https://github.com/kubernetes-incubator/cri-o
 
@@ -97,34 +97,34 @@ sudo make install
 
     [Install]
     WantedBy=multi-user.target" > /etc/systemd/system/ocid.service'
-	```
+```
     
 9. start nu het ocid system daemon
-
-	```
+```
 sudo systemctl daemon-reload
 sudo systemctl enable ocid
 sudo systemctl start ocid
-	```
+```
 10. Download nu de cni source tree
-	```
+```
 go get -d github.com/containernetworking/cni
 cd $GOPATH/src/github.com/containernetworking/cni
-	```
+```
 11. Bouw de cni binaries
-	```
+```
 ./build
-	```
+```
 12. Installeer de cni binaries
- 	```
+```
 sudo mkdir -p /opt/cni/bin
 sudo cp bin/* /opt/cni/bin/
-	```
+```
 13. Configureer nu cni
-	```
+```
 sudo mkdir -p /etc/cni/net.d
-	```
-	```
+```
+
+```
 sudo sh -c 'cat >/etc/cni/net.d/10-mynet.conf <<-EOF
 {
     "cniVersion": "0.2.0",
@@ -142,27 +142,29 @@ sudo sh -c 'cat >/etc/cni/net.d/10-mynet.conf <<-EOF
     }
 }
 EOF'
-	```
-    ```
+```
+
+```
 sudo sh -c 'cat >/etc/cni/net.d/99-loopback.conf <<-EOF
 {
     "cniVersion": "0.2.0",
     "type": "loopback"
 }
 EOF'
-	```
+```
+
 14. Donwload de docker binary releases
-	```
+```
 wget https://get.docker.com/builds/Linux/x86_64/docker-1.12.4.tgz
-	```
+```
 15. extract en installeer de docker binaries
-	```
+```
 tar -xvf docker-1.12.4.tgz
 sudo cp docker/docker* /usr/bin/
-	```
+```
 16. als we **sudo sh -c 'echo "[Unit]** doen moet het bestand er zo uitzien.
 
-	```
+```
 	Description=Docker Application Container Engine
 	Documentation=http://docs.docker.io
 
@@ -178,7 +180,7 @@ sudo cp docker/docker* /usr/bin/
 
     [Install]
     WantedBy=multi-user.target" > /etc/systemd/system/docker.service'
-	```    
+```    
     
 17. start de docker daemon    
 ```    
@@ -188,20 +190,20 @@ sudo systemctl start docke
 ```
 
 18. Creër nu een pod
-    ```
+```
     cd $GOPATH/src/github.com/kubernetes-incubator/cri-o
     POD_ID=$(sudo ocic pod create --config test/testdata/sandbox_config.json)
-    ```
+```
     
 19. Creëer een redis container in de pod.     
-     ```
+```
  CONTAINER_ID=$(sudo ocic ctr create --pod $POD_ID --config test/testdata/container_redis.json)
 
-    ```
+```
 20. start de redis container.     
-     ```
+```
     sudo ocic ctr start --id $CONTAINER_ID
-    ```
+```
 21. test nu de redis container. Connecteer naar de pod op poort 6379
 ```
 telnet 10.88.0.2 6379
