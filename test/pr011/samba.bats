@@ -205,6 +205,7 @@ assert_group_write_dir() {
 @test 'read access for share ‘public’' {
   #                      Share      User          Password
 
+
 }
 
 @test 'write access for share ‘public’' {
