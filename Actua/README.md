@@ -36,11 +36,11 @@ Als Kubernetes een container wilt uitvoeren 'bespreekt' die dit met CRI en daaro
 
 1. Eerst een vooral heb ik een Ubuntu 16.10 machine nodig .Ik kies voor de bento/ubuntu-16.10 box. Ik voer deze commando's uit.
 
-    ```
+```
 vagrant init bento/ubuntu-16.10
 vagrant up
 
-	```
+```
 2. Daarna doe ik een vagrant ssh in de box en verander naar de root met het wachtwoord: vagrant.
 
 	  ```
