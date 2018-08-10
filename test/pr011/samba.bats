@@ -198,23 +198,49 @@ assert_group_write_dir() {
 @test 'NetBIOS name resolution should work' {
   # Look up the Samba server’s NetBIOS name under the specified workgroup
   # The result should contain the IP followed by NetBIOS name
-
+  nmblookup -U ${sut_ip} --workgroup ${workgroup} ${sut_wins_name} \
+    | grep "^${sut_ip} ${sut_wins_name}"
 }
 
 # Read / write access to shares
 @test 'read access for share ‘public’' {
   #                      Share      User          Password
-
-
+  assert_read_access     public     alexanderd    alexanderd
+  assert_read_access     public     anc           anc
+  assert_read_access     public     benoitp       benoitp
+  assert_read_access     public     christophev   christophev
+  assert_read_access     public     elenaa        elenaa
+  assert_read_access     public     evyt          evyt
+  assert_read_access     public     krisv         krisv
+  assert_read_access     public     leend         leend
+  assert_read_access     public     nehirb        nehirb
+  assert_read_access     public     stefaanv      stefaanv
+  assert_read_access     public     stevenh       stevenh
+  assert_read_access     public     stevenv       stevenv
+  assert_read_access     public     svena         svena
+  assert_read_access     public     ${admin_user} ${admin_password}
 }
 
 @test 'write access for share ‘public’' {
   #                      Share      User          Password
-
+  assert_write_access    public     alexanderd    alexanderd
+  assert_write_access    public     anc           anc
+  assert_write_access    public     benoitp       benoitp
+  assert_write_access    public     christophev   christophev
+  assert_write_access    public     elenaa        elenaa
+  assert_write_access    public     evyt          evyt
+  assert_write_access    public     krisv         krisv
+  assert_write_access    public     leend         leend
+  assert_write_access    public     nehirb        nehirb
+  assert_write_access    public     stefaanv      stefaanv
+  assert_write_access    public     stevenh       stevenh
+  assert_write_access    public     stevenv       stevenv
+  assert_write_access    public     svena         svena
+  assert_write_access    public     ${admin_user} ${admin_password}
 }
 
 @test 'read access for share ‘management’' {
-  skip
+
   #                      Share      User          Password
   assert_no_read_access  management alexanderd    alexanderd
   assert_no_read_access  management anc           anc
@@ -233,7 +259,7 @@ assert_group_write_dir() {
 }
 
 @test 'write access for share ‘management’' {
-  skip
+
   #                      Share      User          Password
   assert_no_write_access management alexanderd    alexanderd
   assert_no_write_access management anc           anc
@@ -252,7 +278,7 @@ assert_group_write_dir() {
 }
 
 @test 'read access for share ‘technical’' {
-  skip
+  
   #                      Share      User          Password
   assert_read_access     technical  alexanderd    alexanderd
   assert_read_access     technical  anc           anc
@@ -271,7 +297,7 @@ assert_group_write_dir() {
 }
 
 @test 'write access for share ‘technical’' {
-  skip
+  
   #                      Share      User          Password
   assert_write_access    technical  alexanderd    alexanderd
   assert_write_access    technical  anc           anc
@@ -290,7 +316,7 @@ assert_group_write_dir() {
 }
 
 @test 'read access for share ‘sales’' {
-  skip
+  
   #                      Share      User          Password
   assert_no_read_access  sales      alexanderd    alexanderd
   assert_no_read_access  sales      anc           anc
@@ -309,7 +335,7 @@ assert_group_write_dir() {
 }
 
 @test 'write access for share ‘sales’' {
-  skip
+  
   #                      Share      User          Password
   assert_no_write_access sales      alexanderd    alexanderd
   assert_no_write_access sales      anc           anc
@@ -328,7 +354,7 @@ assert_group_write_dir() {
 }
 
 @test 'read access for share ‘it’' {
-  skip
+  
   #                      Share      User          Password
   assert_no_read_access  it         alexanderd    alexanderd
   assert_no_read_access  it         anc           anc
@@ -347,7 +373,7 @@ assert_group_write_dir() {
 }
 
 @test 'write access for share ‘it’' {
-  skip
+  
   #                      Share      User          Password
   assert_no_write_access it         alexanderd    alexanderd
   assert_no_write_access it         anc           anc

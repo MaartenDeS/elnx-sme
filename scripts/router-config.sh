@@ -42,7 +42,7 @@ set nat source rule 100 translation address 'masquerade'
 
 set nat source rule 200 outbound-interface 'eth1'
 
-set nat source rule 200 source address '192.0.2.0/24'
+set nat source rule 200 source address '172.126.0.0/24'
 
 set nat source rule 200 translation address 'masquerade'
 
@@ -58,9 +58,9 @@ set system time-zone Europe/Brussels
 
 set service dns forwarding domain avalon.lan server 192.0.2.10
 
-set service dns forwarding name-server 8.8.8.8
-set service dns forwarding name-server 8.8.4.4
+set service dns forwarding dhcp 'eth0'
 
+set service dns forwarding listen-on 'eth1'
 set service dns forwarding listen-on 'eth2'
 
 # Make configuration changes persistent
