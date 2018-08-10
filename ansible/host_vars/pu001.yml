@@ -1,6 +1,8 @@
 rhbase_firewall_allow_services:
   - ssh
   - dns
+  - https
+  - http
 
 
 bind_zone_name: avalon.lan

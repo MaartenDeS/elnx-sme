@@ -31,36 +31,27 @@
     - bertvv.samba
     - bertvv.vsftpd
   post_tasks:
-    - name: ACL public
-      acl:
-        path: /srv/shares/public
-        entity: public
-        etype: group
-        permissions: rw
-    - name: ACL management
-      acl:
-        path: /srv/shares/management
-        entity: management
-        etype: group
-        permissions: rw
     - name: ACL sales
       acl:
         path: /srv/shares/sales
-        entity: sales
+        entity: management
         etype: group
-        permissions: rw
+        permissions: rx
+        state: present
     - name: ACL it
       acl:
         path: /srv/shares/it
-        entity: it
+        entity: management
         etype: group
-        permissions: rw
+        permissions: rx
+        state: present
     - name: ACL technical
       acl:
         path: /srv/shares/technical
-        entity: technical
+        entity: public
         etype: group
-        permissions: rw
+        permissions: rx
+        state: present
 #DHCP
 - hosts: pr001
   become: true

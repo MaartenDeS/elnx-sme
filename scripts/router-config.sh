@@ -42,7 +42,7 @@ set nat source rule 100 translation address 'masquerade'
 
 set nat source rule 200 outbound-interface 'eth1'
 
-set nat source rule 200 source address '172.126.0.0/24'
+set nat source rule 200 source address '172.126.0.0/16'
 
 set nat source rule 200 translation address 'masquerade'
 
