@@ -1,0 +1,3 @@
+https://adamj.eu/tech/2015/05/18/making-ansible-a-bit-faster/
+https://github.com/jlafon/ansible-profile
+http://acalustra.com/acelerate-your-ansible-playbooks-with-async-tasks.html

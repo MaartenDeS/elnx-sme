@@ -1,4 +1,4 @@
-# Opdracht Actualiteit - CRI-O
+# Opdracht Actualiteit - Speed Up Ansible Playbooks
 
 ## Inleiding
 
