@@ -30,6 +30,7 @@ Het allereerste wat ik moet doen is een tijdsmeting plugin installeren zodat ik 
 
 Ik clownde de repository en volgde de instructies. Er waren 2 verschillende mogelijkheden om deze plugin toe te voegen. De eerste was voor Ansible 2.0, de andere voor Ansible 1.x. 
 Voor de manier van Ansible1.x  moest ik de map **callback_plugins** met daarin de file **profile_tasks.py** in de map naast mijn playbook. Deze map in mijn opstelling was de map Ansible. Toen ik hierna testte kon ik de tijdsmetingen zien.
+
 De manier voor Ansible 2.0 leek werkte helemaal anders. Hierin moest ik in de **ansible.cfg** file de lijn `` pipelining = True`` zetten op zich gee probleem. De opstelling gebruikte de default locatie van deze file *etc/ansible/ansible.cfg*. Deze kan je overriden door in je home directory ook een **ansible.cfg** file te zetten. In de opstelling is de home directory */home/vagrant/*. Eens ik deze had gevonden maakte ik in Ansible een pre_task aan zodat er elke keer de machine opstart een **ansible.cfg** file wordt toegevoegd in die map. In deze file stond de juiste setting dus wel aan.
 
 
@@ -39,6 +40,8 @@ Nu kan ik de standaardtijden meten van Ansible. Ik doe 10 tijdsmetingen zodat ik
 
 
 ![voorbeeld](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/voorbeeld.png)
+
+*Foto: voorbeeld tijdsweergave*
 
 
 
