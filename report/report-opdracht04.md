@@ -98,11 +98,11 @@ set service dns forwarding listen-on 'eth2'
 
 ### DHCP
 We starten de machine pr001. Hierna starten we de client en gaan we naar de terminal. Hier voeren we het commando ``ip a`` uit. Hiermee controleren we of DHCP de juiste ip adressen heeft meegegeven.
-FOTO
+![LAMP](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/ip.png)
 
 ### Router
 We starten de machine router. Hierna starten we de client en gaan we naar firefox en browsen we naar google.com.
-FOTO
+![LAMP](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/internet.png)
 
 ## Resources
 

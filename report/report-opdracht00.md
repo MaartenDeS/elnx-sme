@@ -20,7 +20,7 @@ Eerst voegde ik in het [all.yml](https://github.com/MaartenDeS/elnx-sme/tree/sol
 
 Om dit te testen kieze we eerst welke van de servers(pu001,pu002,pu004,pr001 of pr011) moet getest worden. Daarna doen we ``vagrant  provision SERVER `` . Daarna gaan we naar de server via het commando ``vagrant ssh SERVER``. Eens we in de server zijn voeren we de tests uit met het commando `` sudo /vagrant/test/runbats.sh ``.
 
-[basis](screenshots/basis.png)
+[basis](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/basis.png)
 
 ## Resources
 

@@ -44,8 +44,11 @@ hierna voegen we ze toe in ons [Site.yml](https://github.com/MaartenDeS/elnx-sme
 
 De server wordt aangemaakt met het commando ``vagrant up pr011``. We loggen in met het commando ``vagrant ssh pr011``). Hierna voeren we tests uit met het commando ``sudo /vagrant/test/runbats.sh``
 
-![Succesvolle tests samba](Screenshots/pr011.JPG)
+![file](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pr011.png)
 
+Ook heb ik dit getest via filezilla.
+
+![zilla](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/filezilla.png)
 
 ## Resources
 

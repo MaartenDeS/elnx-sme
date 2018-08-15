@@ -50,7 +50,7 @@ Hierdoor worden deze rollen geïnstalleerd.
 Om de opstelling te testen moeten we de server provisionnen. Dit doen we met het commando ``vagrant provision pu004`` Hierna connecteren we met de server via het commando ``vagrant ssh pu004``. Daarna voeren we de test scripts uit met het commando: `` sudo /vagrant/test/runbats.sh`` .
 
 
-![LAMP](Screenshots/pu004.png)
+![LAMP](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pu004.png)
 
 ## Resources
 

@@ -42,8 +42,9 @@ hierna voegen we ze toe in ons [Site.yml](https://github.com/MaartenDeS/elnx-sme
 ## Test report
 We maken de servers pu001 en pu002 aan. Dit doen we met de commando's `` vagrant up pu001 `` en `` vagrant up  pu002 ``. Daarna connecteren we met de servers doormiddel van ssh: ``vagrant ssh pu001`` en ``vagrant ssh pu002``. Bij beide voeren we de tests uit met het commando ``sudo /vagrant/test/runbats.sh``.
 
-FOTOOOOOO
+![01](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pu001.png)
 
+![02](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pu002.png)
 ## Resources
 
 
