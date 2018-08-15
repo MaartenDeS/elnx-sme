@@ -1,19 +1,24 @@
 # Enterprise Linux Lab Report
 
-- Student name: 
-- Github repo: <https://github.com/HoGentTIN/elnx-USER.git>
+- Student name: Maarten De Smedt
+- Github repo: <https://github.com/HoGentTIN/elnx-sme-MaartenDeS>
 
-Describe the goals of the current iteration/assignment in a short sentence.
+
+Het opzetten van de basisintellingen in ansible voor alle servers.
 
 ## Test plan
 
-How are you going to verify that the requirements are met? The test plan is a detailed checklist of actions to take, including the expected result for each action, in order to prove your system meets the requirements. Part of this is running the automated tests, but it is not always possible to validate *all* requirements throught these tests.
+De server kan getest worden doormiddel van de testscripts.
 
 ## Procedure/Documentation
 
-Describe *in detail* how you completed the assignment, with main focus on the "manual" work. It is of course not necessary to copy/paste your code in this document, but you can refer to it with a hyperlink.
+Eerst worden de vereiste rollen toegevoegd in het site.yml bestand bijgevoegd.
 
-Make sure to write clean Markdown code, so your report looks good and is clearly structured on Github.
+Eerst voegde ik in het all.yml bestand de EPEL Repository en de packages toe. In dit bestand voegde ik ook de user Maarten toe met wachtwoord maarten. Deze user is een admin. De motd werd ook aangezet. En ten laatste voegde ik de rsa key toe. Dit deed ik met commando %%ssh-keygen%%.
+
+Deze server had ook aangepaste certificaten nodig. Deze diende toen gekopieerd te worden in de correcte mappen op de server. 
+
+
 
 ## Test report
 
