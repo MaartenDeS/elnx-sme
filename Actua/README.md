@@ -13,14 +13,14 @@ In deze taak test ik alles telkens alleen op de server pr011. Ik voer ook altijd
 | **Processor**     | Intel Core i7 4770              | 		
 | **Processorkernen** | Quad core (4)              | 
 | **Kloksnelheid** | 3400MHz              | 
-|** Turbo Frequentie** | 3900 MHz            | 
+|**Turbo Frequentie** | 3900 MHz            | 
 | **RAM-Geheugen**   | 16 GB | 
-| **Type RAM-Geheugen **  | DIMM DDR3 | 
-| **Opslagtype **  | SSD | 
-| **Moederbord ** | MS-7826 (Kaili)  |
+| **Type RAM-Geheugen**  | DIMM DDR3 | 
+| **Opslagtype**  | SSD | 
+| **Moederbord** | MS-7826 (Kaili)  |
 *Tabel: Specificaties HP Envy 700-014eb*
 
-![Computer]()
+![Computer](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/hp.png)
 *Foto: HP Envy 700-014eb*
 
 
@@ -35,9 +35,11 @@ De manier voor Ansible 2.0 leek werkte helemaal anders. Hierin moest ik in de **
 ## Snelheid Normale Ansible
 
 Nu kan ik de standaardtijden meten van Ansible. Ik doe 10 tijdsmetingen zodat ik een goed beeld heb van wat de normake tijd ongeveer is. Hieronder zijn de  de tijden een tabel gegooid voor een duidelijk overzicht. Ook ziet u een foto van hoe de weergave er uitzag
-![voorbeeld]()
 
-FTOO
+
+![voorbeeld](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/voorbeeld.png)
+
+
 
 | Tijdsmeting |Tijd (Plugin weergave - Seconden)               |
 | :---           | :---           |
