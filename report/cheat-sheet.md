@@ -1,7 +1,7 @@
 # Cheat sheets and checklists
 
-- Student name: NAME
-- Github repo: URL
+- Student name: Maarten De Smedt
+- Github repo: <https://github.com/HoGentTIN/elnx-sme-MaartenDeS>
 
 ## Basic commands
 
@@ -20,6 +20,49 @@ Simple workflow for a personal project without other contributors:
 | Commit changes to local repository           | `git commit -m 'MESSAGE'` |
 | Push local changes to remote repository      | `git push`                |
 | Pull changes from remote repository to local | `git pull`                |
+
+
+## Vagrant
+
+| Task                       | Command                |
+| :---                       | :---                   |
+| Status                     | `vagrant status`       |
+| Turn on virtual machine   | `vagrant up VM`        |
+| Reload ansible playbook of a machine | `vagrant provision`    |
+| Remove a VM                | `vagrant destroy VM`   |
+| Execute roles script       | `./scripts/roles-deps.sh` |
+
+
+##DNS - pu001/pu002
+
+| Task                       | Command                |
+| :---                       | :---                   |
+| Primary configuration                     | `/etc/bind/named.conf`       |
+| Describes the root name servers in the world.   | `/etc/bind/db.root`        |
+| DNS resolver conf file | `/etc/resolv.conf`    |
+|  Tool for querying DNS nameservers for information                | `dig`   |
+| Pingen to an adres       | `ping` |
+| DNS lookup       | `host` |
+| Look up a network name server, return ip address      | `nslookup` |
+
+
+##FILE Server - pr011
+| Task                       | Command                |
+| :---                       | :---                   |
+| Check Permissions                     | `ls -l`       |
+| Check Permissions   | `ls -lan`        |
+
+
+##VyOS - router
+
+| Task              | Command           |
+| :---              | :---              |
+| IP Configuration  | `show interfaces` |
+| Show configuration|`show`             |
+| Routing           |`show ip route`    |
+| Show log          |`show log tail`    |
+
+
 
 ## Checklist network configuration
 
