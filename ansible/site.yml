@@ -1,5 +1,5 @@
 # site.yml
----
+
   ##lamp
 - hosts: pu004
   become: true
@@ -26,10 +26,17 @@
 #fileshare
 - hosts: pr011
   become: true
+  vars:
+    ansible_ssh_pipelining: yes
   roles:
     - bertvv.rh-base
     - bertvv.samba
     - bertvv.vsftpd
+  pre_tasks:
+      - name: Copy new ansible.cfg
+        copy:
+          src: actua/ansible.cfg
+          dest: /home/vagrant/ansible.cfg
   post_tasks:
     - name: ACL sales
       acl:
