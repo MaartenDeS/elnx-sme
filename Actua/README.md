@@ -20,8 +20,8 @@ In deze taak test ik alles telkens alleen op de server pr011. Ik voer ook altijd
 | **Moederbord** | MS-7826 (Kaili)  |
 *Tabel: Specificaties HP Envy 700-014eb*
 
-![Computer](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/hp.png  width=100)
 <img src="https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/hp.png" width="500">
+
 *Foto: HP Envy 700-014eb*
 
 
