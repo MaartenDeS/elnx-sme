@@ -47,7 +47,7 @@ Nu kan ik de standaardtijden meten van Ansible. Ik doe 10 tijdsmetingen zodat ik
 | Tijdsmeting 1  | 0:00:22 - 22 seconden     | 		
 |Tijdsmeting 2 | 0:00:21 - 21 seconden         | 
 | Tijdsmeting 3 |0:00:22 - 22 seconden        | 
-|Tijdsmeting 4 | 0:00:21 - 21 seconden     | 
+|Tijdsmeting 4 | 0:00:20 - 21 seconden     | 
 | Tijdsmeting 5| 0:00:21 - 21 seconden    | 
 | Tijdsmeting 6  | 0:00:21 - 21 seconden     | 		
 |Tijdsmeting 7 | 0:00:21 - 21 seconden         | 
