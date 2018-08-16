@@ -131,13 +131,12 @@ Bij mijn setup zou dit moeilijk werken aangezien je met post en pre tasks werkt.
 
 *Foto 6: Tijdsduur ACL Tasks*
 
+
 ## Conclusie 
 
 De opties die we hebben toegevoegd in Ansible werken en Ansible werkt nu sneller, zoals Johnson zei. Bij SSH Pipelining  is er een groter verschil in tijd dan ControlPersist. De beste optie om Ansible te versnellen is dus duidelijk SSH Pipelining. Al zorgt ControlPersist wel voor een kleine toename in snelheid. 
 
-Maar wat anders is bij Johnson dan bij ons is dat daar de verschillen zeer merkbaar waren. Terwijl hier gaat het maar om een paar seconden. In zijn artikel spreekt hij over een toename in snelheid van 30% maar dat is hier nauwelijks te merken. In zijn artikel zelf staat nergens hoe groot zijn playbook was dus een vergelijking kunnen we moeilijk maken. Al zou het goed kunnen dat als je playbook groter is de verschillen in tijd ook groter worden.
-
-
+Maar wat anders is bij Johnson dan bij ons is dat daar de verschillen zeer merkbaar waren. Terwijl hier gaat het maar om een paar seconden. In zijn artikel spreekt hij over een toename in snelheid van 30% maar dat is hier nauwelijks te merken. In zijn artikel zelf staat nergens hoe groot zijn playbook was dus een vergelijking kunnen we moeilijk maken. Al zou het goed kunnen dat als je playbook groter is de verschillen in tijd ook groter worden, dit kon wel niet getest worden aangezien er geen ander playbook is.
 
 
 
@@ -148,10 +147,6 @@ Maar wat anders is bij Johnson dan bij ons is dat daar de verschillen zeer merkb
 | ControlPersist  | **1:30,966**		| **1:28,232** 				| **1:32,508** 				|1:30,951 		| 		
 
 *Tabel 5: Samenvatting (Bold: laagste waarde)*
-
-
-
-
 
 
 
