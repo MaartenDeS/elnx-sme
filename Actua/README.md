@@ -22,7 +22,6 @@ In deze taak test ik alles telkens alleen op de server pr011. Ik voer ook altijd
 *Tabel 1: Specificaties HP Envy 700-014eb*
 
 <img src="https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/hp.png" width="500">
-
 *Foto 1: HP Envy 700-014eb*
 
 ## Procedure/Documetation
@@ -43,7 +42,6 @@ Nu kan ik de standaardtijden meten van Ansible. Ik doe 10 tijdsmetingen zodat ik
 
 
 ![voorbeeld](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/voorbeeld.png)
-
 *Foto 2: voorbeeld tijdsweergave*
 
 
@@ -78,7 +76,6 @@ De tweede manier met het **playbook** is een beetje anders. Daarbij voegen we bi
 Ik heb de manier in het **ansible.cfg** bestand toegpast. Om te bekijken of pipelining aanstaat gebruiken we het commando `` ansible localhost -vvv -m shell -a 'echo ok' ``. Als pipelining aanstaat krijg ik deze output(zie foto 3). Als pipeling uitstaat krijg je een veel langere output(zie foto 4). Dan roept hij 3 tot 5 keer het **command.py** bestand op. Op de foto duidelijk maar 1 keer en daaruit blijkt dat pipelining aanstaat.
 
 ![pipeaan](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/pipeaan.png)
-
 *Foto 3: SSH pipelining output - Pipelining aan*
 
 ![pipeuit](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/pipeuit.png)
@@ -117,8 +114,12 @@ Hieruit kunnen we afleiden dat de gemiddelde tijd  20,802 seconden is, de mediaa
 
 ## Bronnen
 Johsnon - 2015: <https://adamj.eu/tech/2015/05/18/making-ansible-a-bit-faster>
+
 jlafon - 2016: <https://github.com/jlafon/ansible-profile>
+
 Ansible.cfg file manage: <http://itmithran.com/installation-configuration-ansible/>
+
 Uitleg SSH pipelining: <http://toroid.org/ansible-ssh-pipelining>
+
 Check Pipelining Aan: <https://stackoverflow.com/questions/43438519/check-if-ansible-pipelining-is-enabled-working>
 
