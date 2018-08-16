@@ -22,6 +22,7 @@ In deze taak test ik alles telkens alleen op de server pr011. Ik voer ook altijd
 *Tabel 1: Specificaties HP Envy 700-014eb*
 
 <img src="https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/hp.png" width="500">
+
 *Foto 1: HP Envy 700-014eb*
 
 ## Procedure/Documetation
