@@ -15,7 +15,6 @@ dhcp_global_domain_name: 'avalon.lan'
 dhcp_global_domain_name_servers: 172.16.255.254
 
 dhcp_subnets:
-
  - ip: 172.16.0.0
    netmask: 255.255.0.0
    domain_name_servers:

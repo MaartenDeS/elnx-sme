@@ -1,5 +1,14 @@
 # site.yml
 
+## 2de zit docker
+- hosts: pr010
+  become: true
+  roles:
+    - bertvv.rh-base
+    - geerlingguy.docker
+    - geerlingguy.pip
+
+
   ##lamp
 - hosts: pu004
   become: true
