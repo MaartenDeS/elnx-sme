@@ -1,5 +1,6 @@
 # site.yml
 
+
 ## 2de zit docker
 - hosts: pr010
   become: true
@@ -7,6 +8,12 @@
     - bertvv.rh-base
     - geerlingguy.docker
     - geerlingguy.pip
+  pre_tasks:
+      - name: Copy new ansible.cfg
+        copy:
+          src: actua/ansible.cfg
+          dest: /home/vagrant/ansible.cfg
+
 
 
   ##lamp
@@ -26,17 +33,26 @@
       copy:
         src: keycert/newcert.crt
         dest: /etc/pki/tls/certs/newcert.crt
+    - name: Copy new ansible.cfg
+      copy:
+        src: actua/ansible.cfg
+        dest: /home/vagrant/ansible.cfg
+
 #dns
 - hosts: pu001,pu002
   become: true
   roles:
     - bertvv.rh-base
     - bertvv.bind
+  pre_tasks:
+      - name: Copy new ansible.cfg
+        copy:
+          src: actua/ansible.cfg
+          dest: /home/vagrant/ansible.cfg
+
 #fileshare
 - hosts: pr011
   become: true
-  vars:
-    ansible_ssh_pipelining: yes
   roles:
     - bertvv.rh-base
     - bertvv.samba
@@ -74,3 +90,8 @@
   roles:
     - bertvv.rh-base
     - bertvv.dhcp
+  pre_tasks:
+      - name: Copy new ansible.cfg
+        copy:
+          src: actua/ansible.cfg
+          dest: /home/vagrant/ansible.cfg

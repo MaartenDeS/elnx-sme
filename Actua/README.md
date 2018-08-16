@@ -6,7 +6,7 @@ Als deel voor de eintaak van het vak Linux moest ik ook een actua opdracht kieze
 
 Ik koos ervoor om een tool toe te passen op de mijn hoodfopdracht. Ik ga volgens het artikel van Johnson "Making Ansible a Bit Faster" (link in de bron), mijn ansible opstelling sneller proberen maken. In deze taak ga ik bekijken of zijn aanbevelingen die hij aantoonde klopte. Daarbij ook een optimale snelheid proberen te vinden voor mijn ansible opstelling.
 
-In deze taak test ik alles telkens alleen op de server pr011. Ik voer ook altijd telkens een ``vagrant provision pr011`` uit  en geen ``vagrant up pr011 `` aangezien we enkel het asnible playbook testen. De test computer is een HP Envy 700-014eb. De specificaties en foto zijn te vinden hieronder.
+In deze taak test ik alles telkens op alle servers. Ik voer ook altijd telkens een ``vagrant provision`` uit  en geen ``vagrant up `` aangezien we enkel het asnible playbook testen. De test computer is een HP Envy 700-014eb. De specificaties en foto zijn te vinden hieronder.
 
 | HP ENVY 700-014EB |                |
 | :---           | :---           |
@@ -39,7 +39,7 @@ De manier voor Ansible 2.0 leek werkte helemaal anders. Hierin moest ik in de **
 
 ## Snelheid Normale Ansible
 
-Nu kan ik de standaardtijden meten van Ansible. Ik doe 10 tijdsmetingen zodat ik een goed beeld heb van wat de normale tijd ongeveer is. Hieronder zijn de  de tijden een tabel gegooid voor een duidelijk overzicht. Ook ziet u een foto van hoe de weergave er uitzag
+Nu kan ik de standaardtijden meten van Ansible. Ik doe 5 tijdsmetingen zodat ik een goed beeld heb van wat de normale tijd ongeveer is. Hieronder zijn de  de tijden een tabel gegooid voor een duidelijk overzicht. Ook ziet u een foto van hoe de weergave er uitzag. De tijden per server werden bij elkaar opgeteld.
 
 
 ![voorbeeld](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/voorbeeld.png)
@@ -47,22 +47,17 @@ Nu kan ik de standaardtijden meten van Ansible. Ik doe 10 tijdsmetingen zodat ik
 
 
 
-| Tijdsmeting |Tijd (Plugin weergave - Seconden)               |
+| Tijdsmeting |Tijd               |
 | :---           | :---           |
-| Tijdsmeting 1  | 0:00:20.720 - 20.720 seconden     | 		
-|Tijdsmeting 2 | 0:00:20,923 - 20,923 seconden         | 
-| Tijdsmeting 3 |0:00:20,768 - 20,768 seconden        | 
-|Tijdsmeting 4 | 0:00:20,969 - 20,969 seconden     | 
-| Tijdsmeting 5| 0:00:22,731 - 22,731 seconden    | 
-| Tijdsmeting 6  | 0:00:20,915 - 20,915 seconden     | 		
-|Tijdsmeting 7 | 0:00:20,909 - 20,909 seconden         | 
-| Tijdsmeting 8 |0:00:20,902 - 20,902 seconden        | 
-|Tijdsmeting 9 | 0:00:20,897 - 20,897 seconden     | 
-| Tijdsmeting 10| 0:00:21,059 - 21,059 seconden    | 
+| Tijdsmeting 1  | 0:01:34,948      | 		
+|Tijdsmeting 2 | 0:01:33,628 | 
+| Tijdsmeting 3 |0:01:33,963        | 
+|Tijdsmeting 4 | 0:01:36,330     | 
+| Tijdsmeting 5| 0:01:36,593    | 
 
 *Tabel 2: Tijdsweergavenormale ansible*
 
-Hieruit kunnen we afleiden dat de gemiddelde normale tijd  21,079 seconden is, de mediaan is 20,912 seconden.
+Hieruit kunnen we afleiden dat de gemiddelde normale tijd  1:35,092 is, de mediaan is 1:34,948.
 
 
 
@@ -83,25 +78,21 @@ Ik heb de manier in het **ansible.cfg** bestand toegpast. Om te bekijken of pipe
 *Foto 4: SSH pipelining output - Pipelining uit*
 
 
-Ik doe weer 10 tijdsmetingen zodat ik weer een goed beeld heb van de gemiddelde tijd. Hieronder kan je de tijden vinden in een tabel
+Ik doe weer 5 tijdsmetingen zodat ik weer een goed beeld heb van de gemiddelde tijd. Hieronder kan je de tijden vinden in een tabel
 
 
-| Tijdsmeting |Tijd (Plugin weergave - Seconden)               |
+| Tijdsmeting |Tijd             |
 | :---           | :---           |
-| Tijdsmeting 1  | 0:00:20,546 - 20,546 seconden     | 		
-|Tijdsmeting 2 | 0:00:20,620 - 20,620 seconden         | 
-| Tijdsmeting 3 |0:00:20,772 - 20,772 seconden        | 
-|Tijdsmeting 4 | 0:00:20,867 - 20,867 seconden     | 
-| Tijdsmeting 5| 0:00:20,787 - 20,787 seconden    | 
-| Tijdsmeting 6  | 0:00:20,881 - 20,881 seconden     | 		
-|Tijdsmeting 7 | 0:00:21,018 - 21,018 seconden         | 
-| Tijdsmeting 8 |0:00:20,738 - 20,738 seconden        | 
-|Tijdsmeting 9 | 0:00:20,727 - 20,727 seconden     | 
-| Tijdsmeting 10| 0:00:21,067 - 21,067 seconden    | 
+| Tijdsmeting 1  | 0:01:32,605    | 		
+|Tijdsmeting 2 | 0:01:30,442      | 
+| Tijdsmeting 3 |0:01:32.551        | 
+|Tijdsmeting 4 | 0:01:30.932     | 
+| Tijdsmeting 5| 0:01:30,883    | 
+
 
 *Tabel 3: Tijdsweergave SSH pipelinning*
 
-Hieruit kunnen we afleiden dat de gemiddelde tijd met SSH pipelining 20,802 seconden is, de mediaan is 20,779 seconden.
+Hieruit kunnen we afleiden dat de gemiddelde tijd met SSH pipelining 1:31,519  is, de mediaan is 1:30,932.
 
 
 ## ControlPersist
@@ -110,37 +101,59 @@ ControlePersist is een SSH-functie die de verbinding met de server open houdt, k
 
 Dit doe ik door in het **ansible.cfg** bestand onder de lijn van pipelining het volgende toevoeg `` control_path = /tmp/ansible-ssh-%%h-%%p-%%r ``.
 
-Ik test weer 10 keer de tijdsafmetingen, hieronder de tabel. 
+Ik test weer 5 keer de tijdsafmetingen, hieronder de tabel. 
 
-| Tijdsmeting |Tijd (Plugin weergave - Seconden)               |
+| Tijdsmeting |Tijd               |
 | :---           | :---           |
-| Tijdsmeting 1  | 0:00:20,318 - 20,318 seconden     | 		
-|Tijdsmeting 2 | 0:00:19,741 - 19,741 seconden         | 
-| Tijdsmeting 3 |0:00:20,914 - 20,914 seconden        | 
-|Tijdsmeting 4 | 0:00:20,885 - 20,885 seconden     | 
-| Tijdsmeting 5| 0:00:20,946 - 20,946 seconden    | 
-| Tijdsmeting 6  | 0:00:20,876 - 20,876 seconden     | 		
-|Tijdsmeting 7 | 0:00:20,924 - 20,924 seconden         | 
-| Tijdsmeting 8 |0:00:20,738 - 20,738 seconden        | 
-|Tijdsmeting 9 | 0:00:20,767 - 20,767 seconden     | 
-| Tijdsmeting 10| 0:00:20,811 - 20,811 seconden    | 
+| Tijdsmeting 1  | 0:01:28,232    | 		
+|Tijdsmeting 2 | 0:01:32,508          | 
+| Tijdsmeting 3 |0:01:30,966       | 
+|Tijdsmeting 4 | 0:01:30,951   | 
+| Tijdsmeting 5| 0:01:30,722   | 
 
 *Tabel 4: Tijdsweergave ControlPersist*
 
-Hieruit kunnen we afleiden dat de gemiddelde tijd met SSH pipelining en ControlPersist 20,692 seconden is, de mediaan is 20,843 seconden.
+Hieruit kunnen we afleiden dat de gemiddelde tijd met SSH pipelining en ControlPersist 1:30,966 is, de mediaan is 1:30,951.
 
 ## Async
 
 Johnson spreekt in zijn artikel ook nog over een 3de stap. Namelijk async. Met Async tasks kan je terwijl er 1 lange taak aan het runnen is, ook nog een andere klein uitvoeren. 
 
-Bij mijn setup zou dit moeilijk werken aangezien je met post en pre tasks werkt. Aan de tijden te zien is er misschien wel een window bij het kopieren van de ansible.cfg file waar je acl's kunt aanmaken. Maar aangezien het dat na het overlopen van het playbook moet gebeuren en het kopieren ervoor, gaat dit niet. Ook is dit meer voor tasks die een lange tijd duren. Deze beide tasks duren maar een halve second.
+Bij mijn setup zou dit moeilijk werken aangezien je met post en pre tasks werkt. Bij pr011 zijn er de meeste tasks dus daar heb ik screenshots genomen van de tijd van de tasks. Aan deze tijden te zien is er misschien wel een window bij het kopieren van de ansible.cfg file waar je acl's kunt aanmaken. Maar aangezien het dat na het overlopen van het playbook moet gebeuren en het kopieren ervoor, gaat dit niet. Ook is dit meer voor tasks die een lange tijd duren. Deze beide tasks duren maar een halve second. 
+
 
 ![file](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/file.png)
+
 *Foto 5: Tijdsduur Kopie Tasks*
 
 
 ![acl](https://github.com/MaartenDeS/elnx-sme/blob/soluation/Actua/Foto's/acl.png)
+
 *Foto 6: Tijdsduur ACL Tasks*
+
+## Conclusie 
+
+De opties die we hebben toegevoegd in Ansible werken en Ansible werkt nu sneller, zoals Johnson zei. Bij SSH Pipelining  is er een groter verschil in tijd dan ControlPersist. De beste optie om Ansible te versnellen is dus duidelijk SSH Pipelining. Al zorgt ControlPersist wel voor een kleine toename in snelheid. 
+
+Maar wat anders is bij Johnson dan bij ons is dat daar de verschillen zeer merkbaar waren. Terwijl hier gaat het maar om een paar seconden. In zijn artikel spreekt hij over een toename in snelheid van 30% maar dat is hier nauwelijks te merken. In zijn artikel zelf staat nergens hoe groot zijn playbook was dus een vergelijking kunnen we moeilijk maken. Al zou het goed kunnen dat als je playbook groter is de verschillen in tijd ook groter worden.
+
+
+
+
+
+| Versie		|Gemiddelde               | Laagste Waarde | Hoogste Waarde | Mediaan |
+| :---           | :---           |:---           |:---           |:---           |
+| Normaal  		| 1:35,092		| 	1:33,628		|  1:36,593				|1:34:948 			| 		
+| SSH Pipelining  | 1:31,519		| 1:30,442 				| 1:32,605 				| **1:30,932** 			| 		
+| ControlPersist  | **1:30,966**		| **1:28,232** 				| **1:32,508** 				|1:30,951 		| 		
+
+*Tabel 5: Samenvatting (Bold: laagste waarde)*
+
+
+
+
+
+
 
 
 ## Bronnen
