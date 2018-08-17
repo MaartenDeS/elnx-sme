@@ -63,7 +63,7 @@ Hierna vul ik mijn database connection details in.
 
 Dan run ik de installatie en vul daarnee deze info in.
 
-![install](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pr010install.png)
+![install](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pr010installeer.png)
 
 Ik log nu in met mijn username en gekozen password
 
