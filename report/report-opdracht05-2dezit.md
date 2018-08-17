@@ -85,6 +85,7 @@ Hierna ben ik aangemeld op de webserver. Hieronder ziet u mijn admin scherm en o
 Hier zijn mijn recources:
 
 - Docker Role: <https://galaxy.ansible.com/geerlingguy/docker>
+- Docker docs: <https://docs.docker.com/>
 - Docker Compose: <https://docs.docker.com/compose/compose-file/>
 - Docker Container Wordpress & Apache: <https://hub.docker.com/_/wordpress/>
 - Docker Container MySQL: <https://hub.docker.com/_/mysql/>
