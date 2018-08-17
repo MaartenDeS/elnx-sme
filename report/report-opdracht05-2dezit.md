@@ -24,12 +24,12 @@ Om te bekijken of de webserver online staat surfen we naar 172.16.0.12:8181
 Ik voeg een nieuwe host toe in het vagrant host file. De naam is **pr010** met een ip **172.16.0.12** en een subnetmask **255.255.0.0**.
 
 ### Installatie Docker
-Ik zocht een geschikte ansible role om docker te installeren. Ik kwam uit op ``geerlingguy.docker``. Ik downloade deze role met het script en voegde deze toe in **Site.yml** bij pr010. 
+Ik zocht een geschikte ansible role om docker te installeren. Ik kwam uit op ``geerlingguy.docker``. Ik downloade deze role met het script en voegde deze toe in [Site.yml](https://github.com/MaartenDeS/elnx-sme/blob/soluation/ansible/site.yml) bij pr010. 
 
 Ook voegde ik de `` bertvv.rh-base`` role toe zodat de standaard instellingen van **all.yml** ook op de server stonden.
 
 ### Containers
-De containers heb ik aangemaakt via **docker-compose**. Ik maakte een file aan genaamd **docker-compose.yml**, daarin maakte ik 2 containers.
+De containers heb ik aangemaakt via **docker-compose**. Ik maakte een file aan genaamd [docker-compose.yml](https://github.com/MaartenDeS/elnx-sme/blob/soluation/ansible/docker-compose.yml), daarin maakte ik 2 containers.
 
 Eerst een database container. De container noemt db, de image die ik neem is ``mysql:5.6``. Ook voeg ik 2 environment variabelen toe, namelijk: `` MYSQL_ROOT_PASSWORD: root`` en  ``MYSQL_DATABASE: wordpress``.
 
@@ -39,7 +39,7 @@ Hieronder is de layout van mijn file.
 
 ![dockercompose](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pr010compose.png)
 
-Dit bestand sla ik op in de map ansible. In het **site.yml** bestand voeg ik een posttask toe bij **pr010**. De post_taks is het command ``command: /usr/local/bin/docker-compose up -d``. Ik verander ook naar de juiste directory waar het bestand zich bevindt met   ``chdir: /vagrant/ansible``. De naam van de task is ``name: Command docker-compose up``.
+Dit bestand sla ik op in de map ansible. In het [site.yml](https://github.com/MaartenDeS/elnx-sme/blob/soluation/ansible/site.yml) bestand voeg ik een posttask toe bij **pr010**. De post_taks is het command ``command: /usr/local/bin/docker-compose up -d``. Ik verander ook naar de juiste directory waar het bestand zich bevindt met   ``chdir: /vagrant/ansible``. De naam van de task is ``name: Command docker-compose up``.
 
 
 ## Test report
@@ -53,7 +53,7 @@ Ik check of de containers aangemaakt zijn met het commando ``sudo dokcer ps ``.
 ![container](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pr010container.png)
 
 ### Webserver
-Ik surf naar het **172.16.0.12:8181**.
+Ik surf naar het addres **172.16.0.12:8181**.
 
 ![home](https://github.com/MaartenDeS/elnx-sme/blob/soluation/report/screen/pr010home.png)
 
