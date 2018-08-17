@@ -152,17 +152,11 @@ Maar wat anders is bij Johnson dan bij ons is dat daar de verschillen zeer merkb
 
 
 ## Bronnen
-Johsnon - 2015: <https://adamj.eu/tech/2015/05/18/making-ansible-a-bit-faster>
-
-jlafon - 2016: <https://github.com/jlafon/ansible-profile>
-
-Ansible.cfg file manage: <http://itmithran.com/installation-configuration-ansible/>
-
-Uitleg SSH pipelining: <http://toroid.org/ansible-ssh-pipelining>
-
-Check Pipelining Aan: <https://stackoverflow.com/questions/43438519/check-if-ansible-pipelining-is-enabled-working>
-
-Voorbeeld Ansible.cfg file: <https://github.com/opentable/ansible-examples/blob/master/ansible.cfg>
-
-Async: <http://acalustra.com/acelerate-your-ansible-playbooks-with-async-tasks.html>
+- Johsnon - 2015: <https://adamj.eu/tech/2015/05/18/making-ansible-a-bit-faster>
+- jlafon - 2016: <https://github.com/jlafon/ansible-profile>
+- Ansible.cfg file manage: <http://itmithran.com/installation-configuration-ansible/>
+- Uitleg SSH pipelining: <http://toroid.org/ansible-ssh-pipelining>
+- Check Pipelining Aan: <https://stackoverflow.com/questions/43438519/check-if-ansible-pipelining-is-enabled-working>
+- Voorbeeld Ansible.cfg file: <https://github.com/opentable/ansible-examples/blob/master/ansible.cfg>
+- Async: <http://acalustra.com/acelerate-your-ansible-playbooks-with-async-tasks.html>
 

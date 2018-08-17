@@ -8,6 +8,10 @@ The goal of this assignment is to set up the infrastructure for a Small/Medium E
 This repository contains the assignments, some scaffolding code to get you started, and automated acceptance tests to validate whether your solutions conforms to the specifications.
 
 The scaffolding code is based on [ansible-skeleton](https://github.com/bertvv/ansible-skeleton), a framework for quickly setting up an Ansible development and testing environment powered by [Vagrant](https://vagrantup.com).
+ 
+## Taken En Reports
+- Mijn actua taak is hier te vinden: [Actua](https://github.com/MaartenDeS/elnx-sme/tree/soluation/Actua)
+- Mijn reports zijn hier te vinden: [Verslagen](https://github.com/MaartenDeS/elnx-sme/tree/soluation/report) 
 
 ## Overview
 

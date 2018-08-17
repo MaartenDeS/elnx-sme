@@ -33,7 +33,7 @@ Simple workflow for a personal project without other contributors:
 | Execute roles script       | `./scripts/roles-deps.sh` |
 
 
-##DNS - pu001/pu002
+## DNS - pu001/pu002
 
 | Task                       | Command                |
 | :---                       | :---                   |
@@ -46,14 +46,14 @@ Simple workflow for a personal project without other contributors:
 | Look up a network name server, return ip address      | `nslookup` |
 
 
-##FILE Server - pr011
+## FILE Server - pr011
 | Task                       | Command                |
 | :---                       | :---                   |
 | Check Permissions                     | `ls -l`       |
 | Check Permissions   | `ls -lan`        |
 
 
-##VyOS - router
+## VyOS - router
 
 | Task              | Command           |
 | :---              | :---              |
@@ -61,6 +61,20 @@ Simple workflow for a personal project without other contributors:
 | Show configuration|`show`             |
 | Routing           |`show ip route`    |
 | Show log          |`show log tail`    |
+
+
+## Docker
+
+| Task              | Command           |
+| :---              | :---              |
+| Docker Versie  | `docker --verison` |
+| Docker info |`docker info`             |
+| List Docker Containers           |`docker ps` / `docker container ls`   |
+| Start Docker Container          |`docker up`    |
+| Stop Docker Container           |`docker stop`    |
+| Kill Docker Container          |`docker kill`    |
+| Start Docke Containers met docker-compose          |`docker-compose up`    |
+
 
 
 
