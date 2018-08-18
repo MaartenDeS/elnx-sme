@@ -12,7 +12,7 @@
 sut=192.0.2.50
 mariadb_root_password=letmein
 wordpress_database=wordpress
-wordpress_user=Maarten
+wordpress_user=maarten
 wordpress_password=letmein
 #}}}
 

@@ -5,14 +5,15 @@
 - hosts: pr010
   become: true
   roles:
-    - bertvv.rh-base
     - geerlingguy.docker
-    - geerlingguy.pip
   pre_tasks:
-      - name: Copy new ansible.cfg
-        copy:
-          src: actua/ansible.cfg
-          dest: /home/vagrant/ansible.cfg
+    - name: install development packages
+      package: name=libselinux-python
+               state=present
+    - name: Copy new ansible.cfg
+      copy:
+        src: actua/ansible.cfg
+        dest: /home/vagrant/ansible.cfg
   post_tasks:
       - name: Command docker-compose up
         command: /usr/local/bin/docker-compose up -d
