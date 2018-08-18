@@ -51,6 +51,6 @@
     #DHCP
 - name: pr010
   ip: 172.16.0.12 
-  box: bento/fedora-28
+  box: bento/fedora-27
   netmask: 255.255.255.0
 

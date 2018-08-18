@@ -21,12 +21,12 @@ Om te bekijken of de webserver online staat surfen we naar 172.16.0.12:8181
 ## Procedure/Documentation
 
 ### Aanmaken machine
-Ik voeg een nieuwe host toe in het vagrant host file. De naam is **pr010** met een ip **172.16.0.12** en een subnetmask **255.255.0.0**.
+Ik voeg een nieuwe host toe in het vagrant host file. De naam is **pr010** met een ip **172.16.0.12**, een subnetmask **255.255.0.0**  en een box **bento/fedora-27**.
 
 ### Installatie Docker
 Ik zocht een geschikte ansible role om docker te installeren. Ik kwam uit op ``geerlingguy.docker``. Ik downloade deze role met het script en voegde deze toe in [Site.yml](https://github.com/MaartenDeS/elnx-sme/blob/soluation/ansible/site.yml) bij pr010. 
 
-Ook voegde ik de `` bertvv.rh-base`` role toe zodat de standaard instellingen van **all.yml** ook op de server stonden.
+Ook voegde ik de pre tasks **name: install development packages** en **package: name=libselinux-python state=present**.
 
 ### Containers
 De containers heb ik aangemaakt via **docker-compose**. Ik maakte een file aan genaamd [docker-compose.yml](https://github.com/MaartenDeS/elnx-sme/blob/soluation/ansible/docker-compose.yml), daarin maakte ik 2 containers.
