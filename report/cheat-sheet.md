@@ -53,6 +53,12 @@ Simple workflow for a personal project without other contributors:
 | Check Permissions   | `ls -lan`        |
 
 
+## DHCP Server - pr001
+| Task                       | Command                |
+| :---                       | :---                   |
+| Check DHCP                     | `nmap`       |
+
+
 ## VyOS - router
 
 | Task              | Command           |
