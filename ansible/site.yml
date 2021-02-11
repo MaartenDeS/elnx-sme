@@ -2,4 +2,8 @@
 ---
 - hosts: pu004
   become: true
-  roles: []
+  roles:
+    - bertvv.rh-base
+    - bertvv.mariadb
+    - bertvv.httpd
+    - bertvv.wordpress
